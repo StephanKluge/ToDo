@@ -34,10 +34,50 @@
     src: url('../assets/fonts/oxygen-v15-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
+/*The styling part*/
+:root {
+    --background: #182625;
+    --h1gradient1: #40E0D0;
+    --h1gradient2: #FF8C00;
+    --h1gradient3: #FF0080;
+}
   *{
     margin: 0;
     padding: 0;
   }
   body {
-    
+    background-color: var(--background);
+  }
+  
+  .background-animation{
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(
+        45deg,
+        var(--h1gradient1),
+        var(--h1gradient2),
+        var(--h1gradient3)
+    );
+    background-size: 500% 500%;
+    animation: animate 20s ease infinite;
+  }
+  @keyframes animate{
+    0%{
+        background-position: 0 0;
+    }
+    25%{
+        background-position: 100% 0;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    75%{
+        background-position: 0 100%;
+    }
+    100%{
+        background-position: 0 0;
+    }
   }
