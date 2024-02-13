@@ -35,21 +35,24 @@
   }
 
 /*The styling part*/
+/*colors*/
 :root {
     --background: #182625;
     --h1gradient1: #40E0D0;
     --h1gradient2: #FF8C00;
     --h1gradient3: #FF0080;
 }
-  *{
+
+*{
     margin: 0;
     padding: 0;
   }
-  body {
+body {
     background-color: var(--background);
   }
-  
-  .background-animation{
+
+  /*H1 Gradient animation*/
+.background-animation{
     font-family: 'Orbitron', sans-serif;
     font-weight: 900;
     background-clip: text;
@@ -64,7 +67,7 @@
     background-size: 500% 500%;
     animation: animate 20s ease infinite;
   }
-  @keyframes animate{
+@keyframes animate{
     0%{
         background-position: 0 0;
     }
