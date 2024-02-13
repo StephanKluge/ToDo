@@ -1,0 +1,35 @@
+/*Google-Fonts*/
+/* orbitron-regular - latin */
+/*Using for H1*/
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/orbitron-v31-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* orbitron-900 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../assets/fonts/orbitron-v31-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /*Using for ToDo's*/
+  /* oxygen-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/oxygen-v15-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* oxygen-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../assets/fonts/oxygen-v15-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
