@@ -43,7 +43,8 @@
     --h1gradient2: #FF8C00;
     --h1gradient3: #FF0080;
     --primary-color: #1C1D20;
-    --secondary-color: #595959;
+    --secondary-color: #363636;
+    --svg-color: #b3adad;
     --text-color: #F2F2F2;
 }
         /*colors end*/
@@ -55,7 +56,7 @@
   }
 body {
     background-color: var(--background);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Oxygen', sans-serif;
     font-size: 16px;
     color: var(--text-color);
     /*Using the new svh for better mobile solution.*/
@@ -77,16 +78,16 @@ body {
     text-align: center;
     font-family: 'Orbitron', sans-serif;
     font-weight: 900;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(
+    background: linear-gradient(
         45deg,
         var(--h1gradient1),
         var(--h1gradient2),
         var(--h1gradient3)
     );
-    background-size: 500% 500%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 400% 400%;
     animation: animate 20s ease infinite;
   }
 @keyframes animate{
@@ -107,7 +108,7 @@ body {
     }
   }
         /*H1 Gradient animation end*/
-.wrapper{
+.app-cantainer{
     width: 700px;
     max-width: 100%;
     display: flex;
@@ -115,5 +116,128 @@ body {
     gap: 10px;
 }
 #input{
-    
+    /*berechnet alle Inhalte nach innen anstatt nach außen. Somit bleibt es in der größe die man geplant hat*/
+    box-sizing: border-box;
+    /*erster Wert bestimmt abstand oben und unten, zweiter Wert rechts und links*/
+    padding: 12px 20px;
+    /*nimmt ganze breite des elternelementes (hier app-cantainer)ein*/
+    width: 100%;
+    /*hintergrund transparent machen bzw keinen hintergrund*/
+    background: none;
+    /*design rahmen: stärke 2px durchgehend (solid) farbe secondary color aus dem rootverzeichnis*/
+    border: 2px solid var(--secondary-color);
+    /*rechts und links nicht eckig sondern rund*/
+    border-radius: 100px;
+    /*übernimmt vorher festgelegte fonteinstellungen*/
+    font: inherit;
+    /*Schriftfarbe (nicht placeholder)*/
+    color: var(--text-color);
+    /*courser in eingabgefeld custom color geben*/
+    caret-color: var(--h1gradient2);
+}
+/*focus des inputs entfernen, da in jeden browser etwas anders und design zerstört*/
+#input:focus{
+    outline: none;
+}
+form {
+        /*button in eingabefeld setzen*/
+        position: relative;
+}
+#add{
+    /*button in eingabefeld setzen*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    /*button styling*/
+    background-color: var(--h1gradient2);
+    height: 100%;
+    padding: 0 30px;
+    border: none;
+    border-radius: 1000px;
+    cursor: pointer;
+}
+.todos{
+    margin-bottom: 15px;
+    padding: 0 16px;
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+.todos .todo-text {
+    padding: 14px;
+    padding-right: 0;
+    /*mit flex-grow: 1 "drücken" wir den button rechts ganz ans ende*/
+    flex-grow: 1;
+    /*flüssigeres ausgrauen*/
+    transition: 200ms ease;
+}
+.delete {
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+#add svg {
+    fill: var(--secondary-color);
+}
+
+.checkbox {
+    border: 2px solid var(--h1gradient1);
+    border-radius: 100px;
+    /*min height und min-width sorgen dafür dass kreis nicht zu oval wird wenn platz geringer wird*/
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*mit flex-shrink: 0 wird das elemtn auf keinen fall von anderen elementen gedrückt*/
+    flex-shrink: 0;
+    /*Farbwechsel verläuft sauberer*/
+    transition: 200ms ease;
+    cursor: pointer;
+}
+/*entfernt haken wenn nicht gesetzt*/
+.todos svg {
+    fill: transparent;
+}
+/*füllt kreis mit farbe bei checked*/
+input[type="checkbox"]:checked ~ .checkbox{
+    background-color: var(--h1gradient1);
+}
+
+input[type="checkbox"]:checked ~ .checkbox svg {
+    fill: var(--background);
+}
+input[type="checkbox"]:checked ~ .todo-text {
+    text-decoration: line-through;
+    color: var(--primary-color);
+}
+input[type="checkbox"]{
+    display: none;
+}
+.delete svg{
+    fill: var(--svg-color);
+    transition: 500ms ease;
+}
+.delete:hover svg{
+    fill: var(--h1gradient3);
+}
+@media (max-width: 500px) {
+    html {
+        font-size: 12pt;
+    }
+    #add {
+        position: unset;
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        padding: 9px;
+    }
+    .background-animation{
+        margin-top: 30px;
+        font-size: 15vw;
+    }
 }
