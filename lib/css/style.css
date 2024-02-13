@@ -33,26 +33,48 @@
     font-weight: 700;
     src: url('../assets/fonts/oxygen-v15-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
+    /*Google-Fonts end*/
 
 /*The styling part*/
-/*colors*/
+        /*colors*/
 :root {
-    --background: #182625;
+    --background: #262626;
     --h1gradient1: #40E0D0;
     --h1gradient2: #FF8C00;
     --h1gradient3: #FF0080;
+    --primary-color: #1C1D20;
+    --secondary-color: #595959;
+    --text-color: #F2F2F2;
 }
+        /*colors end*/
 
+        /*standart settings*/
 *{
     margin: 0;
     padding: 0;
   }
 body {
     background-color: var(--background);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+    /*Using the new svh for better mobile solution.*/
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+        /*Standart settings end*/
 
-  /*H1 Gradient animation*/
+        /*H1 Gradient animation*/
 .background-animation{
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
     font-family: 'Orbitron', sans-serif;
     font-weight: 900;
     background-clip: text;
@@ -84,3 +106,14 @@ body {
         background-position: 0 0;
     }
   }
+        /*H1 Gradient animation end*/
+.wrapper{
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#input{
+    
+}
